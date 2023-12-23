@@ -1,0 +1,919 @@
+{
+	"info": {
+		"_postman_id": "2913ba0e-fcc0-4e7f-9616-f9560a3b201e",
+		"name": "chamsmobile-dev-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27575299",
+		"_collection_link": "https://blue-resonance-70411.postman.co/workspace/fe4e079d-7c48-49b5-843d-4277449d7ca1/collection/27575299-2913ba0e-fcc0-4e7f-9616-f9560a3b201e?action=share&source=collection_link&creator=27575299"
+	},
+	"item": [
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "Wallet",
+					"item": [
+						{
+							"name": "Create Single Wallet",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletReference\": \"9a37852b-5c7f-4dd2-8b12-2d67b77fe64e\",\n    \"walletName\": \"CHAMS-WALLET\",\n    \"firstName\": \"John\",\n    \"middleName\": \"Doe\",\n    \"lastName\": \"Smith\",\n    \"bvnDetails\": {\n        \"bvn\": \"92765432109\", // THIS VALUE IS UNIQUE 11 digits\n        \"bvnDateOfBirth\": \"1990-05-15\"\n    },\n    \"customerEmail\": \"john.doe@example.com\",\n    \"phoneNumber\": \"+2349172345678\", // THIS VALUE IS UNIQUE\n    \"photoUrl\": \"https://example.com/john-doe-avatar.jpg\", // USE A VALID IMAGE URL\n    \"gender\": \"male\" // ['male','female']\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{DEV_API_BASE_URL}}/wallets/"
+							},
+							"response": [
+								{
+									"name": "Create Single Wallet",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletReference\": \"9a37852b-5c7f-4dd2-8b12-2d67b77fe64e\",\n    \"walletName\": \"CHAMS-WALLET\",\n    \"firstName\": \"John\",\n    \"middleName\": \"Doe\",\n    \"lastName\": \"Smith\",\n    \"bvnDetails\": {\n        \"bvn\": \"92765432109\", // THIS VALUE IS UNIQUE 11 digits\n        \"bvnDateOfBirth\": \"1990-05-15\"\n    },\n    \"customerEmail\": \"john.doe@example.com\",\n    \"phoneNumber\": \"+2349172345678\", // THIS VALUE IS UNIQUE\n    \"photoUrl\": \"https://example.com/john-doe-avatar.jpg\", // USE A VALID IMAGE URL\n    \"gender\": \"male\" // ['male','female']\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{API_BASE_URL}}/wallets/"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "33"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"21-TPVW5e5bXQxlYlrQtoP7oyMBEiQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 21 Dec 2023 15:01:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"msg\": \"wallet created\",\n    \"id\": 101\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Wallet By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{DEV_API_BASE_URL}}/wallets/101"
+							},
+							"response": [
+								{
+									"name": "Get Wallet By ID",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{API_BASE_URL}}/wallets/101"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1080"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"438-JlE7I0XV8ujfD8fA1GTKXwhbIew\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 21 Dec 2023 15:03:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully obtained user record\",\n    \"user\": {\n        \"id\": 101,\n        \"phone_number\": \"+2349172345678\",\n        \"created_at\": \"2023-12-21T14:00:48.000Z\",\n        \"mifos_client_id\": 1578,\n        \"mifos_office_id\": 1,\n        \"mifos_savings_id\": 1135,\n        \"mifos_resource_id\": 1578,\n        \"gender\": \"male\",\n        \"first_name\": \"John\",\n        \"last_name\": \"Smith\",\n        \"date_of_birth\": \"1990-05-14T23:00:00.000Z\",\n        \"address\": null,\n        \"place_of_birth\": null,\n        \"photo_url\": \"https://example.com/john-doe-avatar.jpg\",\n        \"state_id\": 25,\n        \"middle_name\": \"Doe\",\n        \"tier\": 1,\n        \"email\": \"john.doe@example.com\",\n        \"registration_token\": null,\n        \"device_type\": null,\n        \"state_of_residence\": null,\n        \"merchant_id\": 0,\n        \"account_type\": \"individual\",\n        \"show_balance\": 1,\n        \"send_mail\": 1,\n        \"send_sms\": 1,\n        \"is_sms_cost_taken\": 0,\n        \"unpaid_sms_count\": 0,\n        \"last_sms_debit_date\": null,\n        \"icad_profiled\": 0,\n        \"wallet_reference\": \"9a37852b-5c7f-4dd2-8b12-2d67b77fe64e\",\n        \"wallet_name\": \"CHAMS-WALLET\",\n        \"business_id\": 4,\n        \"wallets\": [\n            {\n                \"id\": 1135,\n                \"account_no\": \"101000001135\",\n                \"status_enum\": 300,\n                \"sub_status_enum\": 0,\n                \"account_status\": \"normal\",\n                \"balance\": \"0.000000\",\n                \"name\": \"Kegow Wallet\"\n            }\n        ],\n        \"bvn\": \"92765432109\",\n        \"clientClassification\": {\n            \"active\": false,\n            \"mandatory\": false\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Wallets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{DEV_API_BASE_URL}}/wallets/"
+							},
+							"response": [
+								{
+									"name": "Get All Wallets",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{API_BASE_URL}}/wallets/"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1058"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"422-ydd5s29YmWYkcHlO567ULnOQOU0\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 21 Dec 2023 15:03:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"msg\": \"successful\",\n    \"wallets\": [\n        {\n            \"id\": 101,\n            \"phone_number\": \"+2349172345678\",\n            \"created_at\": \"2023-12-21T14:00:48.000Z\",\n            \"mifos_client_id\": 1578,\n            \"mifos_office_id\": 1,\n            \"mifos_savings_id\": 1135,\n            \"mifos_resource_id\": 1578,\n            \"gender\": \"male\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Smith\",\n            \"date_of_birth\": \"1990-05-14T23:00:00.000Z\",\n            \"address\": null,\n            \"place_of_birth\": null,\n            \"photo_url\": \"https://example.com/john-doe-avatar.jpg\",\n            \"state_id\": 25,\n            \"middle_name\": \"Doe\",\n            \"tier\": 1,\n            \"email\": \"john.doe@example.com\",\n            \"registration_token\": null,\n            \"device_type\": null,\n            \"state_of_residence\": null,\n            \"merchant_id\": 0,\n            \"account_type\": \"individual\",\n            \"show_balance\": 1,\n            \"send_mail\": 1,\n            \"send_sms\": 1,\n            \"is_sms_cost_taken\": 0,\n            \"unpaid_sms_count\": 0,\n            \"last_sms_debit_date\": null,\n            \"icad_profiled\": 0,\n            \"wallet_reference\": \"9a37852b-5c7f-4dd2-8b12-2d67b77fe64e\",\n            \"wallet_name\": \"CHAMS-WALLET\",\n            \"business_id\": 4,\n            \"wallets\": [\n                {\n                    \"id\": 1135,\n                    \"account_no\": \"101000001135\",\n                    \"status_enum\": 300,\n                    \"sub_status_enum\": 0,\n                    \"account_status\": \"normal\",\n                    \"balance\": \"0.000000\",\n                    \"name\": \"Kegow Wallet\"\n                }\n            ],\n            \"bvn\": \"92765432109\",\n            \"clientClassification\": {\n                \"active\": false,\n                \"mandatory\": false\n            }\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Transfers",
+					"item": [
+						{
+							"name": "Wallet-2-Wallet Single Transfer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"senderWalletNumber\": \"101000001135\",\n    \"transferAmount\": \"200\",\n    \"receiverWalletNumber\": \"101000001041\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{DEV_API_BASE_URL}}/transfers/wallet-to-wallet"
+							},
+							"response": [
+								{
+									"name": "single-transfer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"senderWalletNumber\": \"101000001053\",\n    \"transferAmount\": \"200\",\n    \"receiverWalletNumber\": \"101000001041\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{DEV_API_BASE_URL}}/transfers/wallet-to-wallet"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-security-policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "cross-origin-embedder-policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "cross-origin-opener-policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "cross-origin-resource-policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "origin-agent-cluster",
+											"value": "?1"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"175-q1F8HpuqpZslytb74K1dO0Whp6g\""
+										},
+										{
+											"key": "X-Cloud-Trace-Context",
+											"value": "52338de730e31da6fbcb914521dd064c;o=1"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 14:45:11 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Google Frontend"
+										},
+										{
+											"key": "Content-Length",
+											"value": "373"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully transferred amount\",\n    \"transfer\": {\n        \"tx_ref\": \"5d54eb8b-7819-4e7f-9535-af553d2387fe\",\n        \"transferAmount\": \"200\",\n        \"senderWalletNumber\": \"101000001053\",\n        \"receiverWalletNumber\": \"101000001041\",\n        \"beneficiary_account_name\": \"Buks Fola\",\n        \"originator_account_name\": \"Saviour Francis\",\n        \"beneficiary_account_number\": \"101000001041\",\n        \"originator_account_number\": \"101000001053\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "Get Transaction Details By TXN Reference",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DEV_API_BASE_URL}}/wallets/:walletId/transactions/:transactionRef",
+									"host": [
+										"{{DEV_API_BASE_URL}}"
+									],
+									"path": [
+										"wallets",
+										":walletId",
+										"transactions",
+										":transactionRef"
+									],
+									"variable": [
+										{
+											"key": "walletId",
+											"value": "101"
+										},
+										{
+											"key": "transactionRef",
+											"value": "18722a2d-704f-4e1a-b0a4-dfd5e2cdcbe7"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Transaction Details By TXN Reference",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_BASE_URL}}/wallets/:walletId/transactions/:transactionRef",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"wallets",
+												":walletId",
+												"transactions",
+												":transactionRef"
+											],
+											"variable": [
+												{
+													"key": "walletId",
+													"value": "101"
+												},
+												{
+													"key": "transactionRef",
+													"value": "18722a2d-704f-4e1a-b0a4-dfd5e2cdcbe7"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1143"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"477-k4KZBqI/UPuppFBE8zYQq58WlrM\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 21 Dec 2023 15:21:10 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"msg\": \"successful\",\n    \"transactionDetails\": {\n        \"id\": 6763,\n        \"transaction_ref_no\": \"18722a2d-704f-4e1a-b0a4-dfd5e2cdcbe7\",\n        \"beneficiary_bank_code\": \"KEGOW\",\n        \"beneficiary_account_number\": \"101000000424\",\n        \"amount\": \"1000.00\",\n        \"charges\": \"0.00\",\n        \"vat\": \"0.00\",\n        \"stamp_duty\": \"0.00\",\n        \"narration\": \"\",\n        \"beneficiary_name_enquiry_reference_number\": \"nil\",\n        \"beneficiary_account_name\": \"John Doe\",\n        \"beneficiary_bank_verification_number\": \"nil\",\n        \"beneficiary_kyc_level\": 0,\n        \"originator_account_name\": \"John Smith\",\n        \"originator_account_number\": \"101000001135\",\n        \"originator_bank_verification_number\": \"nil\",\n        \"originator_kyc_level\": 0,\n        \"transaction_location\": \"\",\n        \"channel_code\": \"1\",\n        \"channel_app\": \"\",\n        \"transaction_broker\": \"LOCAL\",\n        \"transaction_status\": \"success\",\n        \"transaction_type\": \"intra-outward\",\n        \"payment_reference\": \"18722a2d-704f-4e1a-b0a4-dfd5e2cdcbe7\",\n        \"third_party_bank_name\": null,\n        \"merchant_id\": \"0\",\n        \"response_code_nibss\": \"\",\n        \"response_message_nibss\": \"\",\n        \"response_code_cba\": \"\",\n        \"response_message_cba\": \"\",\n        \"response_code_cba_rvsl\": \"\",\n        \"response_message_cba_rvsl\": \"\",\n        \"transaction_source_ip_address\": \"\",\n        \"transaction_time\": \"2023-12-21T15:18:00.000Z\",\n        \"notification_processed\": 0,\n        \"mifos_transaction_id\": null\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DEV_API_BASE_URL}}/wallets/:walletId/transactions?startDate=2023-05-19&endDate=2023-12-21&page=1&limit=10",
+									"host": [
+										"{{DEV_API_BASE_URL}}"
+									],
+									"path": [
+										"wallets",
+										":walletId",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2023-05-19"
+										},
+										{
+											"key": "endDate",
+											"value": "2023-12-21",
+											"description": "update to the current date if need be"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "walletId",
+											"value": "101"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get All Transactions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_BASE_URL}}/wallets/101/transactions?startDate=2023-05-19&endDate=2023-12-21&page=1&limit=10",
+											"host": [
+												"{{API_BASE_URL}}"
+											],
+											"path": [
+												"wallets",
+												"101",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2023-05-19"
+												},
+												{
+													"key": "endDate",
+													"value": "2023-12-21"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3350"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d16-ATfMUbCK5XzzVcbdCl3Lo7vLjFA\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 21 Dec 2023 15:24:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"msg\": \"successful\",\n    \"transactionHistory\": [\n        {\n            \"id\": 6763,\n            \"transaction_ref_no\": \"18722a2d-704f-4e1a-b0a4-dfd5e2cdcbe7\",\n            \"beneficiary_bank_code\": \"KEGOW\",\n            \"beneficiary_account_number\": \"101000000424\",\n            \"amount\": \"1000.00\",\n            \"charges\": \"0.00\",\n            \"vat\": \"0.00\",\n            \"stamp_duty\": \"0.00\",\n            \"narration\": \"\",\n            \"beneficiary_name_enquiry_reference_number\": \"nil\",\n            \"beneficiary_account_name\": \"John Doe\",\n            \"beneficiary_bank_verification_number\": \"nil\",\n            \"beneficiary_kyc_level\": 0,\n            \"originator_account_name\": \"John Smith\",\n            \"originator_account_number\": \"101000001135\",\n            \"originator_bank_verification_number\": \"nil\",\n            \"originator_kyc_level\": 0,\n            \"transaction_location\": \"\",\n            \"channel_code\": \"1\",\n            \"channel_app\": \"\",\n            \"transaction_broker\": \"LOCAL\",\n            \"transaction_status\": \"success\",\n            \"transaction_type\": \"intra-outward\",\n            \"payment_reference\": \"18722a2d-704f-4e1a-b0a4-dfd5e2cdcbe7\",\n            \"third_party_bank_name\": null,\n            \"merchant_id\": \"0\",\n            \"response_code_nibss\": \"\",\n            \"response_message_nibss\": \"\",\n            \"response_code_cba\": \"\",\n            \"response_message_cba\": \"\",\n            \"response_code_cba_rvsl\": \"\",\n            \"response_message_cba_rvsl\": \"\",\n            \"transaction_source_ip_address\": \"\",\n            \"transaction_time\": \"2023-12-21T15:18:00.000Z\",\n            \"notification_processed\": 0,\n            \"mifos_transaction_id\": null\n        },\n        {\n            \"id\": 6762,\n            \"transaction_ref_no\": \"260b7a67-75c5-4293-8deb-79b53b1070e4\",\n            \"beneficiary_bank_code\": \"KEGOW\",\n            \"beneficiary_account_number\": \"101000001135\",\n            \"amount\": \"999800.00\",\n            \"charges\": \"0.00\",\n            \"vat\": \"0.00\",\n            \"stamp_duty\": \"0.00\",\n            \"narration\": \"\",\n            \"beneficiary_name_enquiry_reference_number\": \"nil\",\n            \"beneficiary_account_name\": \"John Smith\",\n            \"beneficiary_bank_verification_number\": \"nil\",\n            \"beneficiary_kyc_level\": 0,\n            \"originator_account_name\": \"John Doe\",\n            \"originator_account_number\": \"101000000424\",\n            \"originator_bank_verification_number\": \"nil\",\n            \"originator_kyc_level\": 0,\n            \"transaction_location\": \"\",\n            \"channel_code\": \"1\",\n            \"channel_app\": \"\",\n            \"transaction_broker\": \"LOCAL\",\n            \"transaction_status\": \"success\",\n            \"transaction_type\": \"intra-outward\",\n            \"payment_reference\": \"260b7a67-75c5-4293-8deb-79b53b1070e4\",\n            \"third_party_bank_name\": null,\n            \"merchant_id\": \"0\",\n            \"response_code_nibss\": \"\",\n            \"response_message_nibss\": \"\",\n            \"response_code_cba\": \"\",\n            \"response_message_cba\": \"\",\n            \"response_code_cba_rvsl\": \"\",\n            \"response_message_cba_rvsl\": \"\",\n            \"transaction_source_ip_address\": \"\",\n            \"transaction_time\": \"2023-12-21T15:10:00.000Z\",\n            \"notification_processed\": 0,\n            \"mifos_transaction_id\": null\n        },\n        {\n            \"id\": 6761,\n            \"transaction_ref_no\": \"a3b2018c-8c16-47e2-9822-9dd6573333db\",\n            \"beneficiary_bank_code\": \"KEGOW\",\n            \"beneficiary_account_number\": \"101000001135\",\n            \"amount\": \"200.00\",\n            \"charges\": \"0.00\",\n            \"vat\": \"0.00\",\n            \"stamp_duty\": \"0.00\",\n            \"narration\": \"\",\n            \"beneficiary_name_enquiry_reference_number\": \"nil\",\n            \"beneficiary_account_name\": \"John Smith\",\n            \"beneficiary_bank_verification_number\": \"nil\",\n            \"beneficiary_kyc_level\": 0,\n            \"originator_account_name\": \"John Doe\",\n            \"originator_account_number\": \"101000000424\",\n            \"originator_bank_verification_number\": \"nil\",\n            \"originator_kyc_level\": 0,\n            \"transaction_location\": \"\",\n            \"channel_code\": \"1\",\n            \"channel_app\": \"\",\n            \"transaction_broker\": \"LOCAL\",\n            \"transaction_status\": \"success\",\n            \"transaction_type\": \"intra-outward\",\n            \"payment_reference\": \"a3b2018c-8c16-47e2-9822-9dd6573333db\",\n            \"third_party_bank_name\": null,\n            \"merchant_id\": \"0\",\n            \"response_code_nibss\": \"\",\n            \"response_message_nibss\": \"\",\n            \"response_code_cba\": \"\",\n            \"response_message_cba\": \"\",\n            \"response_code_cba_rvsl\": \"\",\n            \"response_message_cba_rvsl\": \"\",\n            \"transaction_source_ip_address\": \"\",\n            \"transaction_time\": \"2023-12-21T15:09:00.000Z\",\n            \"notification_processed\": 0,\n            \"mifos_transaction_id\": null\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "527e7a0fc83d4830495e795158ea4b69f039f638f3282932b13bbac23fb4abd4c9639c9665f765c27db6e7f023d4a915"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "DEV_API_BASE_URL",
+			"value": "https://kegow-business-api-soidnv4kmq-ew.a.run.app/api",
+			"type": "string"
+		}
+	]
+}
