@@ -29,41 +29,16 @@ services:
     ports:
       - "${MONGODB_PORT:-27017}:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-""}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-""}
+      # MONGO_INITDB_DATABASE: "${MONGO_INITDB_DATABASE:-''}"
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_INITDB_ROOT_USERNAME:-''}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_INITDB_ROOT_PASSWORD:-''}"
     volumes:
       - test_mongodb-data:/data/db
     networks:
       - test
-  mysql:
-    image: mysql/mysql-server:latest
-    container_name: "${APP_NAME:-'test'}_mysql"
-    ports:
-      - "${FORWARD_DB_PORT:-3306}:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
-      MYSQL_ROOT_HOST: "%"
-      MYSQL_DATABASE: "${DB_DATABASE}"
-      MYSQL_USER: "${DB_USERNAME}"
-      MYSQL_PASSWORD: "${DB_PASSWORD}"
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
-    volumes:
-      - "test-mysql:/var/lib/mysql"
-    networks:
-      - test
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-    networks:
-      - test
-
 networks:
   test:
     driver: bridge
 
 volumes:
   test_mongodb-data:
-  test-mysql:
-    driver: local
